@@ -1,0 +1,43 @@
+{% extends 'home.html' %}
+{% load static %}
+
+{% block content %}
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Tembea Nasi Safaris</a>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <h1 class="text-center">Welcome to Tembea Nasi Safaris</h1>
+        <p class="text-center">Awesomeness and Fun Have a Try!</p>
+
+        <div class="text-center mt-4">
+            <a href="#" class="btn btn-primary">Available</a>
+        </div>
+    </div>
+
+    <!-- Navigation links -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="{% url 'events:index' %}">Home</a></li>
+                <li><a href="{% url 'events:user-registration' %}">Register Event</a></li>
+                <li><a href="{% url 'events:all-events' %}">All Events</a></li>
+                <li><a href="{% url 'events:delete-event' %}">Delete Events</a></li>
+                <li><a href="{% url 'events:user-login' %}">Login</a></li>
+                <li><a href="{% url 'events:events-today' %}">Events Today</a></li>
+                <li><a href="{% url 'events:upd-event' %}">Update Event</a></li>
+                <li><a href="{% url 'events:user-logout' %}">Logout</a></li>
+                <li><a href="{% url 'events:add_event' %}">Add Event</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <footer class="text-center mt-5">
+        <p>&copy; 2024 NjorogeCodes. All rights reserved.</p>
+    </footer>
+
+</body>
+{% endblock %}

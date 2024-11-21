@@ -1,0 +1,19 @@
+<form method="POST">
+    {% csrf_token %}
+    <label for="e-name">Event Name:</label>
+    <input type="text" id="e-name" name="e-name" value="{{ event.name }}" required><br>
+
+    <label for="e-date">Event Date:</label>
+    <input type="date" id="e-date" name="e-date" value="{{ event.date }}" required><br>
+
+    <label for="e-location">Location:</label>
+    <input type="text" id="e-location" name="e-location" value="{{ event.location }}" required><br>
+
+    <label for="e-capacity">Capacity:</label>
+    <input type="number" id="e-capacity" name="e-capacity" value="{{ event.capacity }}" required><br>
+
+    <label for="e-price">Price:</label>
+    <input type="number" id="e-price" name="e-price" value="{{ event.price }}" step="0.01" required><br>
+
+    <button type="submit">Update Event</button>
+</form>

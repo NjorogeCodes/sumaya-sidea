@@ -1,0 +1,17 @@
+{% extends 'index.html' %}
+
+{% block content %}
+  <h2>Events Happening Today</h2>
+
+  <ul>
+    {% for event in events_today %}
+      <li>
+        <strong>{{ event.name }}</strong><br>
+        Location: {{ event.location }}<br>
+        Start Time: {{ event.start_time }}
+      </li>
+    {% empty %}
+      <p>No events happening today.</p>
+    {% endfor %}
+  </ul>
+{% endblock %}

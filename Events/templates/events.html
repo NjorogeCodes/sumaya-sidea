@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Events</title>
+
+    {% load static %} <!-- Load static files -->
+
+    <!-- Link to a static CSS file (adjust the path to your static folder) -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+    <!-- Block for the header if you're extending a base template -->
+    {% block header %}
+        <header>
+            <h1>All Events</h1>
+        </header>
+    {% endblock %}
+
+    {% block content %}
+        <!-- Display events table -->
+        {% if all_events %}
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Date</th>
+                        <th>Location</th>
+                        <th>Capacity</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for event in all_events %}
+                        <tr>
+                            <td>{{ event.name }}</td>
+                            <td>{{ event.date }}</td>
+                            <td>{{ event.location }}</td>
+                            <td>{{ event.capacity }}</td>
+                            <td>{{ event.price }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% else %}
+            <p>No events found.</p>
+        {% endif %}
+    {% endblock %}
+
+    <!-- Block for footer if you're extending a base template -->
+    {% block footer %}
+        <footer>
+            <p>Footer content goes here.</p>
+        </footer>
+    {% endblock %}
+
+    <!-- Include static JS files (adjust the path to your static folder) -->
+    <script src="{% static 'js/script.js' %}"></script>
+
+</body>
+</html>
